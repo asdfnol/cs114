@@ -1,0 +1,10 @@
+a linked list uses NODES
+a NODE has two portions.
+    - the data portion
+        - the data portion refers to the data, not an actual container
+    - a pointer to the NEXT portion
+so on and so forth
+
+the LAST node contains a null pointer.
+
+an outer class has access to an inner classes data. and vice versa.
