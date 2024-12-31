@@ -20,5 +20,6 @@ public class Main {
         }
         */
         System.out.println("hadslfkj");
+        System.out.println("hi thing");
     }
 }
