@@ -1,8 +1,17 @@
-package project.one;
+// package project.one;
+// ^^ for personal project management 
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
+
+/*
+ * this program scans through an unedited maze.dat file, converts into map array
+ * recursively navigates the map following the instructions on canvas,
+ * prints the arrary results onto results.dat
+ * prints the contents of results.dat onto screen. using System.out.println();
+ *
+ */
 
 public class Main {
     private static class Point {
@@ -17,7 +26,7 @@ public class Main {
     private static Point startPoint;
 
     public static void main(String[] args) {
-        File in = new File("src/project.one/maze.dat");
+        File in = new File("maze.dat");
         int x = 0; int y = 0;
         int[][] map = new int[0][0];
 
@@ -77,7 +86,16 @@ public class Main {
         } else {
             System.out.println("There was no end to the maze.");
         }
-        mapToFile(map, "src/project.one/result.dat");
+        mapToFile(map, "result.dat");
+
+        File out = new File("result.dat");
+        try (Scanner scan = new Scanner(out);) {
+            while (scan.hasNext()) {
+                System.out.println(scan.nextLine());
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static boolean step(Point currStep, int[][] map) {
@@ -86,7 +104,7 @@ public class Main {
 
         /* BASE CASES */
 
-        // if out of bounds
+        // if point is out of bounds
         if ( y < 0 || y >= map.length || x < 0 || x >= map[y].length ) {
             return false;
         }
