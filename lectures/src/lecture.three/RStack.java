@@ -5,10 +5,10 @@ class RStack<E> implements Stack<E> {
     
     // inner class
     private class Node<T> {
+        private T data;
         private Node(T data) {
             this.data = data;
         }
-        private T data;
         private Node<T> next;
     }
 

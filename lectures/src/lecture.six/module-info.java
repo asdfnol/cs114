@@ -7,4 +7,8 @@ module lecture.six {
     //      protected is for child classes
 
     // chapter 10 - ALGORITHM EFFICIENCY AND (specifically )SORTING
+    // order of magnitude analysis and big O notation.
+    // big O notation
+    //
+    //
 }

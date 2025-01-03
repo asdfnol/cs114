@@ -2,6 +2,7 @@ package lecture.five;
 import java.util.Iterator;
 
 public class ASortedList<E extends Comparable<? super E>> extends List<E> {
+
     public void insert(E data) {
         Node<E> temp = new Node<E>(data);
         if (head == null || data.compareTo(head.data) < 0) { 
@@ -11,7 +12,7 @@ public class ASortedList<E extends Comparable<? super E>> extends List<E> {
             // this is if it doesn't go before the head.
             // you wanna iterate to the spot it belongs.
             Node<E> curr = head;
-            while( curr != null ) {
+            while( curr.next != null ) {
                 if (data.compareTo(curr.next.data) < 0) {
                     temp.next = curr.next;
                     break;
@@ -22,6 +23,7 @@ public class ASortedList<E extends Comparable<? super E>> extends List<E> {
         }
         // every new node becomes head
     }
+
     // sorted list iterator
     public Iterator<E> iterator() {
         return new Iterator<E>() {
@@ -36,6 +38,7 @@ public class ASortedList<E extends Comparable<? super E>> extends List<E> {
             private Node<E> curr = head;
         };
     }
+
     public void remove(E data) {
         if (head != null) { // if not empty
             if (data.compareTo(head.data) == 0) { // handles first node
@@ -52,6 +55,7 @@ public class ASortedList<E extends Comparable<? super E>> extends List<E> {
             }
         }
     }
+
     public E retrieve(int index) {
         int i = 0;
         // iteratively searching for the Node at index
@@ -62,6 +66,7 @@ public class ASortedList<E extends Comparable<? super E>> extends List<E> {
         }
         return null;
     }
+
     public boolean search(E data) {
         for ( Node<E> curr = head; curr != null; curr = curr.next ) {
             // need to investigate how this works. the compareTo
