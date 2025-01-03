@@ -1,4 +1,5 @@
 module lecture.five {
+    // chapter 5
     /* SORTED LINKED LISTS */
     /* NOTES FOR FUTURE POSSIBLY */
     // if classes need to be contained within one Main class,
@@ -7,4 +8,6 @@ module lecture.five {
     //  i was getting errors because it did that.
     //    i will see if it works perfectly fine without that.
     //  i'll make it work whatever
+    //
+    //  it's all reference manipulation man
 }

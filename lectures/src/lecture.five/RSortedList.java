@@ -1,10 +1,18 @@
 package lecture.five;
-/*
 import java.util.Iterator;
 
-class SortedList<E extends Comparable<? super E>> extends List<E> {
+class RSortedList<E extends Comparable<? super E>> extends List<E> {
+    // not allowed to handle special cases in the recursive methods
     public void insert(E data) {
+        Node<E> temp = new Node<E>(data);
+        head = insert(head, temp);
     }
+    private Node<E> insert(Node<E> curr, Node<E> node) {
+        // he went over how this would work.
+        // you're returning either the head or node.
+        return null;
+    }
+
     // sorted list iterator
     public Iterator<E> iterator() {
         return new Iterator<E>() {
@@ -19,7 +27,13 @@ class SortedList<E extends Comparable<? super E>> extends List<E> {
             private Node<E> curr = head;
         };
     }
+
     public void remove(E data) {
+        head = remove(head, data);
+    }
+    private Node<E> remove(Node<E> curr, E data) {
+        // return the node and/or node.next
+        return null;
     }
 
     public E retrieve(int index) {
@@ -31,11 +45,9 @@ class SortedList<E extends Comparable<? super E>> extends List<E> {
     }
 
     public boolean search(E data) {
-        // not allowed to handle special cases in this
         return search(head, data);
     }
     private boolean search(Node<E> curr, E data) {
         return false;
     }
 }
-*/

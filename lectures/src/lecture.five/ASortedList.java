@@ -1,7 +1,7 @@
 package lecture.five;
 import java.util.Iterator;
 
-public class SortedList<E extends Comparable<? super E>> extends List<E> {
+public class ASortedList<E extends Comparable<? super E>> extends List<E> {
     public void insert(E data) {
         Node<E> temp = new Node<E>(data);
         if (head == null || data.compareTo(head.data) < 0) { 
